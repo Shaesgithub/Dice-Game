@@ -20,6 +20,7 @@
     --fs-h2: 2.5rem;
     --fs-body: 1.8rem;
 }
+
 button{background: var(--clr-accent); color: var(--clr-text-main); font-size: 15px; font-weight:500; border: none; border-radius: 8px; cursor: pointer;}
 button:hover{background: var(--clr-other); color: var(--clr-outline);}
 
@@ -58,21 +59,17 @@ header h1, header p{
     background-color: var(--clr-other);
     border-radius: 50px;
     box-shadow: 10px 10px 10px #000000;
-    
-
 }
 .dice_wrapper{
     padding:50px;
 }
 .scoreBox_wrapper{
     padding:50px 70px 50px 70px;
-
 }
 .line_wrapper{
     display: flex;
     flex-direction: column;
 }
-
 .lineOne, .lineTwo {
     width: 30px;
     height: 10px;
@@ -80,8 +77,6 @@ header h1, header p{
     box-shadow: 4px 2px  #ffeeee;
     margin: 7px;  
 }
-
-
 .scoreBox{
     width: 275px;
     height: 275px;
@@ -93,13 +88,10 @@ header h1, header p{
     background: #ffeeee;
     box-shadow: 10px 10px 10px rgba(132, 132, 132, 0.38);
 }
-
-
 img{
     width: 300px;
     transform: rotate(90deg);
     transition: all 0.4s;
-
 }
 .gameOutcome_msg{
     height: 100px;
@@ -107,7 +99,6 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .btn_wrapper{
     display: flex;
@@ -117,4 +108,5 @@ img{
    padding: 20px;
    margin: 10px 30px;
    box-shadow: 7px 7px 5px #000000;
+   font-family: var(--ff-main);
 }
