@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DICE GAME</title>
+  <!-- LINK STYLESHEET -->
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Single Player Dice Game</h1>
+    <p>Get your score to 20 without rolling a 1!</p>
+  </header>
+  
+  <!-- GAMEBOARD WRAPPER -->
+  <div class="gameBoard">
+
+    <div class="diceScore_wrapper">
+
+      <!-- DICE IMAGE -->
+      <div class="dice_wrapper">
+        <img src="Dice-faces/Dice Face_1.1.png" id="diceImages"  class="defaultImage" alt='dices'>
+      </div>
+
+      <div class="line_wrapper">
+        <div class="lineOne"></div>
+        <div class="lineTwo"></div>
+      </div>
+
+      <!-- SCORE BOX -->
+      <div class="scoreBox_wrapper">
+        <div class="scoreBox">
+          <p>Your Currect Score</p>
+          <hr>
+          <div id="total">0</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GAME MESSAGE -->
+    <div class="gameOutcome_msg">
+      <h2 id="youLose"></h2>
+      <h2 id="youWin"></h2>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="btn_wrapper">
+      <div class="rollDice"><button id="roll-btn">Roll the Dice </button></div>
+      <div class="resetGame"><button id="reset-btn">Reset Game </button></div>
+   </div>
+  
+    
+  </div>
+
+  <!-- LINK JS FILE -->
+  <script src="script.js"></script>
+</body>
+</html>
