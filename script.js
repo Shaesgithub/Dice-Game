@@ -24,9 +24,14 @@ const throwDice = () => {
         //If the Dice lands on 1 you lose
          if (dice == 1) {
             const loseMsg = document.querySelector("#youLose");
-            loseMsg.innerHTML = 'Sorry! You Lose!';
+            loseMsg.innerHTML = "Sorry! You Lose!";
             totalScore=0;
             toggleBtn(rollBtn);
+            rollBtn.style.background ="#966aa6";
+            rollBtn.style.color ="#4f4f4f";
+            resetBtn.style.background ="#E397FF";
+            resetBtn.style.color ="black";
+            
         } else {
             hideMsg()
             totalScore += dice;
@@ -35,19 +40,32 @@ const throwDice = () => {
         //If the Dice equals to 20+ you win
         if (totalScore >= 20) {
             const winMsg = document.querySelector("#youWin");
-            winMsg.innerHTML = 'You reached 20! you Win!';
+            winMsg.innerHTML = "You reached 20! you Win!";
             totalScore = 0;
+            rollBtn.style.background ="#966aa6";
+            rollBtn.style.color ="#4f4f4f";
+            resetBtn.style.background ="#E397FF";
+            resetBtn.style.color ="black";
+            rollBtn.disabled = true;
+            
         }
+        //Change button styles
+        resetBtn.addEventListener("click", ()=>{
+            rollBtn.style.background ="#E397FF";
+            rollBtn.style.color ="black";
+            resetBtn.style.background ="#966aa6";
+            resetBtn.style.color ="#4f4f4f";
+            rollBtn.disabled = false;
+        });
         
         //Remove default image to dice images
-        const diceDOM = document.querySelector("#diceImages");
-        diceDOM.classList.remove("defaultImage");
-        diceDOM.src = diceFaceImg['dice' + dice];    
+        const allDiceImges = document.querySelector("#diceImages");
+        allDiceImges.src = diceFaceImg["dice" + dice];    
 }
 //Start game
 const rollBtn = document.querySelector("#roll-btn");
 rollBtn.addEventListener("click",  throwDice) 
-diceFace.style.transform = "rotate(450deg)";
+
 
 //Hide messages
 const hideMsg = () => {
@@ -55,7 +73,7 @@ const hideMsg = () => {
     document.querySelector("#youWin").innerHTML = '';
 }
 
-//Disable roll button if you lose
+//Disable buttons toggle
 const toggleBtn = (btn) => {
     if (btn.disabled === true) {
         btn.disabled = false;
@@ -67,12 +85,12 @@ const toggleBtn = (btn) => {
 //Reset game
 const reset = () => {
     totalScore = 0;
-    document.querySelector("#diceImages").classList.add("defaultImage");
     total.textContent='0';
     hideMsg();
     toggleBtn(rollBtn);
-
 }
+
 const resetBtn = document.querySelector("#reset-btn");
 resetBtn.addEventListener("click", reset);
 
+diceFace.style.transform = "rotate(450deg)";
